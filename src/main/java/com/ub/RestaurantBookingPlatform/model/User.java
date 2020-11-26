@@ -3,6 +3,8 @@ package com.ub.RestaurantBookingPlatform.model;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.util.List;
+
 @Getter
 /*@Setter
 @AllArgsConstructor
@@ -13,6 +15,7 @@ public class User {
 
     private String username;
     private String description;
-
+    private Reservation reservation_user;
+    private List<Reservation> history_reservation;
 
 }

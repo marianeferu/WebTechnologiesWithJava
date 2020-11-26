@@ -36,13 +36,13 @@ public class UserRepository {
 
     private void loadData() {
         User user1 = User.builder()
-                .username("Silvia")
+                .username("Ioan Silvescu")
                 .build();
 
         users.add(user1);
 
         User user2 = User.builder()
-                .username("Maria")
+                .username("Maria Neferu")
                 .build();
 
         users.add(user2);
