@@ -16,6 +16,7 @@ public class Reservation {
     private Table table;
     private Integer num_persons;
     private boolean confirmed_reserv;
+    private Payment payment_method;
 
 
 

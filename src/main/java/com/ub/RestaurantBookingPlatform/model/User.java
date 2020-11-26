@@ -17,5 +17,6 @@ public class User {
     private String description;
     private Reservation reservation_user;
     private List<Reservation> history_reservation;
+    private boolean user_role; // 0 - client user, 1 - employee
 
 }

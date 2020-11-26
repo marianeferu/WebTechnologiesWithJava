@@ -34,6 +34,13 @@ public class UserRepository {
 
     }
 
+
+    public User set_role(User user){
+
+        return user;  // boolean - customer: user.role = 0; employee: user.role = 1;
+    }
+
+
     private void loadData() {
         User user1 = User.builder()
                 .username("Ioan Silvescu")
@@ -47,6 +54,8 @@ public class UserRepository {
 
         users.add(user2);
     }
+
+
 
 
 }

@@ -17,15 +17,40 @@ public class UserService {
     private UserRepository userRepository;
 
 
-    public UserDto save(UserDto userDto){
+/*    public User save(User user){
 
-        User user =  mapToEntity(userDto);
+
+        User savedUser = userRepository.save(user);
+        return savedUser;
+
+    }
+    public List<User> getAll(){
+
+        return userRepository.getAll();
+    }
+
+
+    public User delete(User user) {
+
+        return userRepository.delete(user);
+
+    }*/
+
+    public User set_role(User user) {
+
+        return userRepository.set_role(user);
+    }
+
+
+    public UserDto save(UserDto userDto) {
+
+        User user = mapToEntity(userDto);
         User savedUser = userRepository.save(user);
         return mapToDto(savedUser);
 
     }
 
-    public List<UserDto> getAll(){
+    public List<UserDto> getAll() {
 
         return userRepository.getAll()
                 .stream()
@@ -33,24 +58,20 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
-
-
-
-    public boolean delete(String name){
+    public boolean delete(String name) {
 
         Optional<User> optionalUser = userRepository.getAll()
-                                                    .stream()
-                                                    .filter(user -> user.getUsername().equals(name))
-                                                    .findAny();
+                .stream()
+                .filter(user -> user.getUsername().equals(name))
+                .findAny();
 
-        if(optionalUser.isPresent())
-        {
+        if (optionalUser.isPresent()) {
             userRepository.delete(optionalUser.get());
             return true;
-        }
-        else
+        } else
             return false;
     }
+
 
     private UserDto mapToDto(User user) {
         return UserDto.builder()
