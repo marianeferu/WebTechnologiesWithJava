@@ -16,6 +16,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+
     public UserDto save(UserDto userDto){
 
         User user =  mapToEntity(userDto);
@@ -28,7 +29,7 @@ public class UserService {
 
         return userRepository.getAll()
                 .stream()
-                .map(user -> mapToDto(user))//response: json
+                .map(this::mapToDto) //response: json
                 .collect(Collectors.toList());
     }
 

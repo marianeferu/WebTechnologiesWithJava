@@ -11,7 +11,7 @@ import lombok.Getter;
 
 public class Notification {
 
-    private String body;
+    private String message;
     private Date date;
     private User user;
 
